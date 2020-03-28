@@ -29,6 +29,7 @@ public class PinLockView extends RecyclerView {
     private Drawable mButtonBackgroundDrawable;
     private Drawable mDeleteButtonDrawable;
     private boolean mShowDeleteButton;
+    private boolean mVibrateButtonClick;
 
     private IndicatorDots mIndicatorDots;
     private PinLockAdapter mAdapter;
@@ -151,6 +152,7 @@ public class PinLockView extends RecyclerView {
             mButtonBackgroundDrawable = typedArray.getDrawable(R.styleable.PinLockView_keypadButtonBackgroundDrawable);
             mDeleteButtonDrawable = typedArray.getDrawable(R.styleable.PinLockView_keypadDeleteButtonDrawable);
             mShowDeleteButton = typedArray.getBoolean(R.styleable.PinLockView_keypadShowDeleteButton, true);
+            mVibrateButtonClick = typedArray.getBoolean(R.styleable.PinLockView_keypadVibrateButtonClick, true);
             mDeleteButtonPressedColor = typedArray.getColor(R.styleable.PinLockView_keypadDeleteButtonPressedColor, ResourceUtils.getColor(getContext(), R.color.greyish));
         } finally {
             typedArray.recycle();
@@ -164,6 +166,7 @@ public class PinLockView extends RecyclerView {
         mCustomizationOptionsBundle.setDeleteButtonDrawable(mDeleteButtonDrawable);
         mCustomizationOptionsBundle.setDeleteButtonSize(mDeleteButtonSize);
         mCustomizationOptionsBundle.setShowDeleteButton(mShowDeleteButton);
+        mCustomizationOptionsBundle.setVibrateButtonClick(mVibrateButtonClick);
         mCustomizationOptionsBundle.setDeleteButtonPressesColor(mDeleteButtonPressedColor);
 
         initView();

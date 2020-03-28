@@ -4,6 +4,7 @@
         <attr name="pinLength" format="integer" />
         <attr name="keypadTextColor" format="color" />
         <attr name="keypadTextSize" format="dimension" />
+        <attr name="keypadVibrateButtonClick" format="boolean" />
         <attr name="keypadButtonSize" format="dimension" />
         <attr name="keypadVerticalSpacing" format="dimension" />
         <attr name="keypadHorizontalSpacing" format="dimension" />

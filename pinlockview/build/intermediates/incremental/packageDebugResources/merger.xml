@@ -3,6 +3,7 @@
         <attr format="integer" name="pinLength"/>
         <attr format="color" name="keypadTextColor"/>
         <attr format="dimension" name="keypadTextSize"/>
+        <attr format="boolean" name="keypadVibrateButtonClick"/>
         <attr format="dimension" name="keypadButtonSize"/>
         <attr format="dimension" name="keypadVerticalSpacing"/>
         <attr format="dimension" name="keypadHorizontalSpacing"/>
@@ -26,6 +27,7 @@
         <attr format="integer" name="pinLength"/>
         <attr format="color" name="keypadTextColor"/>
         <attr format="dimension" name="keypadTextSize"/>
+        <attr format="boolean" name="keypadVibrateButtonClick"/>
         <attr format="dimension" name="keypadButtonSize"/>
         <attr format="dimension" name="keypadVerticalSpacing"/>
         <attr format="dimension" name="keypadHorizontalSpacing"/>

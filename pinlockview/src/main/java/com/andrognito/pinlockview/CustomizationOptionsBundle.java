@@ -18,6 +18,7 @@ public class CustomizationOptionsBundle {
     private int deleteButtonSize;
     private boolean showDeleteButton;
     private int deleteButtonPressesColor;
+    private boolean vibrateButtonClick;
 
     public CustomizationOptionsBundle() {
     }
@@ -84,5 +85,13 @@ public class CustomizationOptionsBundle {
 
     public void setDeleteButtonPressesColor(int deleteButtonPressesColor) {
         this.deleteButtonPressesColor = deleteButtonPressesColor;
+    }
+
+    public boolean isVibrateButtonClick() {
+        return vibrateButtonClick;
+    }
+
+    public void setVibrateButtonClick(boolean vibrateButtonClick) {
+        this.vibrateButtonClick = vibrateButtonClick;
     }
 }

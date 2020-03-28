@@ -15,6 +15,7 @@ attr? keypadShowDeleteButton
 attr? keypadTextColor
 attr? keypadTextSize
 attr? keypadVerticalSpacing
+attr? keypadVibrateButtonClick
 attr? pinLength
 color greyish
 color mine_shaft
@@ -37,4 +38,4 @@ id fixed
 layout layout_delete_item
 layout layout_number_item
 string app_name
-styleable PinLockView pinLength keypadTextColor keypadTextSize keypadButtonSize keypadVerticalSpacing keypadHorizontalSpacing keypadButtonBackgroundDrawable keypadDeleteButtonDrawable keypadDeleteButtonSize keypadShowDeleteButton keypadDeleteButtonPressedColor dotEmptyBackground dotFilledBackground dotDiameter dotSpacing indicatorType
+styleable PinLockView pinLength keypadTextColor keypadTextSize keypadVibrateButtonClick keypadButtonSize keypadVerticalSpacing keypadHorizontalSpacing keypadButtonBackgroundDrawable keypadDeleteButtonDrawable keypadDeleteButtonSize keypadShowDeleteButton keypadDeleteButtonPressedColor dotEmptyBackground dotFilledBackground dotDiameter dotSpacing indicatorType

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.os.Build;
+import android.os.Vibrator;
 import android.util.TypedValue;
+import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,8 +22,13 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public static final int DEFAULT_VIBRATE_CLICK = 50;
+
+
     private static final int VIEW_TYPE_NUMBER = 0;
     private static final int VIEW_TYPE_DELETE = 1;
+    private final Vibrator vibrator;
+
 
     private Context mContext;
     private CustomizationOptionsBundle mCustomizationOptionsBundle;
@@ -34,6 +41,7 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public PinLockAdapter(Context context) {
         this.mContext = context;
         this.mKeyValues = getAdjustKeyValues(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0});
+        this.vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -193,6 +201,21 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     }
                 }
             });
+            // This haptic feedback works, but actually not necessary by my app, as I don't want to enable haptic feedback when clicking numbers
+//            mNumberButton.setOnTouchListener(new View.OnTouchListener() {
+//                @Override
+//                public boolean onTouch(View v, MotionEvent event) {
+//                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//                        if(mCustomizationOptionsBundle.isVibrateButtonClick()){
+//                            mNumberButton.performHapticFeedback(
+//                                    HapticFeedbackConstants.VIRTUAL_KEY,
+//                                    HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING  // Ignore device's setting. Otherwise, you can use FLAG_IGNORE_VIEW_SETTING to ignore view's setting.
+//                            );
+//                        }
+//                    }
+//                    return false;
+//                }
+//            });
         }
     }
 
@@ -233,6 +256,13 @@ public class PinLockAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
                             mButtonImage.setColorFilter(mCustomizationOptionsBundle
                                     .getDeleteButtonPressesColor());
+//                            // This haptic feedback works, but actually not necessary by my app, as I don't want to enable haptic feedback when clicking numbers
+//                            if( mCustomizationOptionsBundle.isVibrateButtonClick()){
+//                                mDeleteButton.performHapticFeedback(
+//                                        HapticFeedbackConstants.VIRTUAL_KEY,
+//                                        HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING  // Ignore device's setting. Otherwise, you can use FLAG_IGNORE_VIEW_SETTING to ignore view's setting.
+//                                );
+//                            }
                             rect = new Rect(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
                         }
                         if (event.getAction() == MotionEvent.ACTION_UP) {
